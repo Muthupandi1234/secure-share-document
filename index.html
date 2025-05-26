@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Govt Docs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    </form>
+  </section>
+  <header>
+    <h1>Secure & Share Government Documents</h1>
+    <nav>
+      <a href="#register">Register</a>
+      <a href="#login">Login</a>
+      <a href="#upload">Upload</a>
+      <a href="#documents">Documents</a>
+      <a href="#profile">My Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Register Section -->
+    <section id="register">
+      <h2>Register</h2>
+      <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="aadhaar">Aadhaar Number:</label>
+        <input type="text" id="aadhaar" name="aadhaar" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <!-- OTP Verification -->
+    <section id="otp">
+      <h2>Verify OTP</h2>
+      <form>
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp">
+        <button type="submit">Verify</button>
+      </form>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login">
+      <h2>Login</h2>
+      <form>
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" name="loginEmail" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- Upload Document -->
+    <section id="upload">
+      <h2>Upload Document</h2>
+      <form>
+        <label for="docName">Document Name:</label>
+        <input type="text" id="docName" name="docName">
+        <label for="docFile">Select File:</label>
+        <input type="file" id="docFile" name="docFile">
+        <button type="submit">Upload</button>
+      </form>
+    </section>
+
+    <!-- Document List with Update/Delete/Share -->
+    <section id="documents">
+      <h2>My Documents</h2>
+      <ul>
+        <li>
+          PAN Card.pdf
+          <button>Update</button>
+          <button>Delete</button>
+          <button>Share</button>
+        </li>
+        <!-- Add more documents here -->
+      </ul>
+    </section>
+
+    <!-- User Profile -->
+    <section id="profile">
+      <h2>My Profile</h2>
+      <p><strong>Name:</strong> muthupandi k</p>
+      <p><strong>Email:</strong> muthupandi715@gmail.com</p>
+      <p><strong>Aadhaar:</strong> 1234-5678-9012</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SecureDocs Inc.</p>
+  </footer>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="firebase.js"></script>
+<script type="module">
+  import { registerUser, loginUser, uploadDocument } from './firebase-app.js';
+
+  document.getElementById('registerBtn').addEventListener('click', registerUser);
+  document.getElementById('loginBtn').addEventListener('click', loginUser);
+  document.getElementById('uploadBtn').addEventListener('click', uploadDocument);
+</script>
+
+</body>
+</html>
